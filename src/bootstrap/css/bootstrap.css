@@ -2354,7 +2354,7 @@ output {
   display: block;
   width: 100%;
   height: 34px;
-  padding: 6px 12px;
+  padding: 6px 10px;
   font-size: 14px;
   line-height: 1.42857143;
   color: #555;
@@ -3435,7 +3435,7 @@ tbody.collapse.in {
   position: relative;
   z-index: 2;
   float: left;
-  width: 100%;
+  width: 90%;
   margin-bottom: 0;
 }
 .input-group-lg > .form-control,
@@ -3496,7 +3496,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .input-group-addon,
 .input-group-btn {
-  width: 1%;
+  width: 10%;
   white-space: nowrap;
   vertical-align: middle;
 }

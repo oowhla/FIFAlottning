@@ -4,11 +4,10 @@ include_once "include/top.php";
 ?>
 
 <div class='container'>
-
 	<?php
 	$db = DB::getInstance();
-
-	$winmoney = $db->query("select name, winmoneyfifa, winmoneypoker, winmoneyfifa+winmoneypoker as winmoneytotal, (winmoneyfifa+winmoneypoker-(100*roundsplayed)) as total, roundsplayed from players order by winmoneytotal desc");
+	$winmoney = $db->query("select name, winmoneyfifa, winmoneypoker, winmoneyfifa+winmoneypoker as winmoneytotal, 
+							(winmoneyfifa+winmoneypoker-(100*roundsplayed)) as total, roundsplayed from players where active = 1 order by winmoneytotal desc");
 	?>
 
 	<table class="table table-striped table-bordered">
@@ -21,9 +20,8 @@ include_once "include/top.php";
 			<td class='data'><strong>Totalt</strong></td>
 			<td class='data'><strong>Resultat inkl insats</strong></td>
 		</tr>
+
 		<?php
-
-
 		$pos = 1;
 		foreach($winmoney->results() as $winnings) {
 			echo "<tr>
@@ -37,13 +35,12 @@ include_once "include/top.php";
 			</tr>";
 			$pos++;
 		}
-	echo "</table>";
+		?>
 
+	</table>
+</div>
 
-
-
-
+<?php
 	include_once "include/bottom.php";
-
-	?>
+?>
 

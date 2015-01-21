@@ -8,8 +8,9 @@
 	<!-- <script src="js/javascript.js"></script> -->
 	<link rel="stylesheet" type="text/css" href="src/bootstrap/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="include/stylesheet.css">
+	<link rel="icon" type="image/png"  href="img/trophy-favicon.jpg">
 
-	<title> Lottning för FIFA</title>
+	<title>Lottning och resultat</title>
 </head>
 
 <?php 
@@ -33,7 +34,8 @@
 					<li id="resultat"><a href="resultat.php">Resultat</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li id="beräkning"><a href="admin.php">För in resultat</a></li>
+					<li id="addPlayers"><a href="managePlayers.php">Hantera spelare</a></li>
+					<li id="admin"><a href="admin.php">För in resultat</a></li>
 				</ul>
 			</div>
 		</div>

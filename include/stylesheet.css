@@ -117,9 +117,67 @@ body {
 
 .nummer {
   width:40px;
+  text-align: center;
 }
 
 .data {
   width: 100px;
   text-align: center;
 }
+
+.input-group .form-control {
+  position: relative;
+  z-index: 2;
+  float: left;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.input-group .activate {
+  position: relative;
+  background-color: #5cb85c;
+  z-index: 2;
+  float: left;
+  left: -20px;
+  width: 100%;
+  margin-bottom: 0;
+
+}
+
+.input-group .inactivate {
+  position: relative;
+  background-color: #d9534f;
+  z-index: 2;
+  float: left;
+  left: -20px;
+  width: 100%;
+  margin-bottom: 0;
+
+}
+
+.input-group .add1 {
+  position: relative;
+  background-color: #d9edf7;
+  z-index: 2;
+  float: left;
+  left: -30px;
+  width: 114%;
+  margin-bottom: 0;
+
+}
+
+.input-group .add {
+  position: relative;
+  background-color: #d9edf7;
+  z-index: 2;
+  float: left;
+  left: -43px;
+  width: 114%;
+  margin-bottom: 0;
+
+}
+
+.bothActive {
+  left: -40px;
+}
+

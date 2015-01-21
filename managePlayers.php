@@ -30,6 +30,7 @@ if(isset($_POST["activate"])) {
 ?>
 
 <div class='container'>
+<hr>
 <?php if($exists) echo $messages['danger'] . "Spelaren finns redan!" . $messages['end'];?>
 <?php if($added) echo $messages['success'] . "Spelaren tillagd!" . $messages['end'];?>
 	<div class='row'>
@@ -68,7 +69,7 @@ if(isset($_POST["activate"])) {
 			?>
 		</div>
 	</div>
-	<br><br>
+	<br><hr><br>
 
 	<?php 
 	if($players->count() == 0) {

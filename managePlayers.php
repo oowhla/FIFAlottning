@@ -5,8 +5,8 @@ $db = DB::getInstance();
 $exists = false;
 $added = false;
 if(Input::exists()) {
-	if(isset($_POST["playerName"])) {
-		$playerName = $_POST["playerName"];
+	if(isset($_POST["add"])) {
+		$playerName = $_POST["add"];
 		$players = $db->query("select name from players");
 		foreach($players->results() as $player) {
 			if($player->name == $playerName) {
@@ -78,9 +78,9 @@ if(isset($_POST["activate"])) {
 		<div class='col-md-4 col-md-offset-1'>
 			<form id="addPlayer" method="post">
 					<div class='input-group'>
-						<input name='add' class='form-control' placeholder='Spelare att lägga till'>
+						<input name='add' class='form-control' placeholder='Spelare att lÃ¤gga till'>
 				 		<span class='input-group-btn'>
-							<button class='btn btn-default add1' type='submit'>Lägg till</button>
+							<button class='btn btn-default add1' type='submit'>LÃ¤gg till</button>
 						</span>
 					</div>
 			</form>
@@ -94,9 +94,9 @@ if(isset($_POST["activate"])) {
 		<div class='col-md-4 col-md-offset-4'>
 			<form id="addPlayer" method="post">
 					<div class='input-group bothActive'>
-						<input name='add' class='form-control' placeholder='Spelare att lägga till'>
+						<input name='add' class='form-control' placeholder='Spelare att lÃ¤gga till'>
 				 		<span class='input-group-btn'>
-							<button class='btn btn-default add' type='submit'>Lägg till</button>
+							<button class='btn btn-default add' type='submit'>LÃ¤gg till</button>
 						</span>
 					</div>
 			</form>

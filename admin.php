@@ -26,9 +26,9 @@ if(Input::exists()) {
 ?>
 
 <div class='container'>
-<hr>
-<?php if(!$passwordOK) echo $messages['danger'] . "Fel lösenord!" . $messages['end'];?>
-<?php if($inputOK) echo $messages['success'] . "Resultat sparat!" . $messages['end'];?>
+	<hr>
+	<?php if(!$passwordOK) echo $messages['danger'] . "Fel lösenord!" . $messages['end'];?>
+	<?php if($inputOK) echo $messages['success'] . "Resultat sparat!" . $messages['end'];?>
 	
 	<br>
 	<div class="row">
@@ -53,50 +53,59 @@ if(Input::exists()) {
 						<td class='data'><input name='name[".$player->name."]' type='checkbox' value='"  . $player->name . "' checked></td>
 						<td class='data'><label>" . $player->name ."</label></td>
 						<td class='data'><input class='fifavinst' name='fifavinst[".$player->name."]' type='text' value='0'></td>
-						</tr>";
-						$pos++;
-					}
-					?>
-				</table>
-				<input name="password" type="password" placeholder="Lösenord">
-				<button type="submit">Bekräfta</button>
-			</form>
-		</div>
-		<div id="pokerdiv" class="col-sm-4 col-sm-offset-2">
-			<form id="Poker" method="POST">
-				<table class="table table-striped table-bordered">
-					<tr>
-						<td class='data' colspan="3">
-							<strong>Poker</strong>
-						</td>
-					</tr>
-					<tr>
-						<td class='data'><strong>Deltog</strong></td>
-						<td class='data'><strong>Namn</strong></td>
-						<td class='data'><strong>Vinst</strong></td>
-					</tr>
-					<?php
-					$players = $db->query("select name from players where active = 1");
-					$pos = 1;
-					foreach($players->results() as $player) {
-						echo "<tr>
-						<td class='data'><input name='name[".$player->name."]' type='checkbox' value='"  . $player->name . "' checked></td>
-						<td class='data'><label>" . $player->name ."</label></td>
-						<td class='data'><input class='pokervinst' name='pokervinst[".$player->name."]' type='text' value='0'></td>
-						</tr>";
-						$pos++;
-					}
-					?>
-				</table>
-				<input name="password" type="password" placeholder="Lösenord">
-				<button type="submit">Bekräfta</button>
-			</form>
-		
-		</div>
+					</tr>";
+					$pos++;
+				}
+				?>
+			</table>
+			<div class='input-group'>
+				<input name='password' class='form-control' type="password" placeholder="Lösenord">
+		 		<span class='input-group-btn'>
+					<button class='btn btn-default confirm' type='submit'>Bekräfta</button>
+				</span>
+			</div>
+		</form>
+	</div>
+	<div id="pokerdiv" class="col-sm-4 col-sm-offset-2">
+		<form id="Poker" method="POST">
+			<table class="table table-striped table-bordered">
+				<tr>
+					<td class='data' colspan="3">
+						<strong>Poker</strong>
+					</td>
+				</tr>
+				<tr>
+					<td class='data'><strong>Deltog</strong></td>
+					<td class='data'><strong>Namn</strong></td>
+					<td class='data'><strong>Vinst</strong></td>
+				</tr>
+				<?php
+				$players = $db->query("select name from players where active = 1");
+				$pos = 1;
+				foreach($players->results() as $player) {
+					echo "<tr>
+					<td class='data'><input name='name[".$player->name."]' type='checkbox' value='"  . $player->name . "' checked></td>
+					<td class='data'><label>" . $player->name ."</label></td>
+					<td class='data'><input class='pokervinst' name='pokervinst[".$player->name."]' type='text' value='0'></td>
+				</tr>";
+				$pos++;
+			}
+			?>
+			</table>
+			<div class='input-group'>
+				<input name='password' class='form-control' type="password" placeholder="Lösenord">
+		 		<span class='input-group-btn'>
+					<button class='btn btn-default confirm' type='submit'>Bekräfta</button>
+				</span>
+			</div>
+		</form>
 
-		<?php
-		include_once "include/bottom.php";
-		?>
+	</div>
+</div>
+</div>
 
-		<script src="js/js.js"></script>
-	
+<?php
+include_once "include/bottom.php";
+?>
+
+<script src="js/js.js"></script>

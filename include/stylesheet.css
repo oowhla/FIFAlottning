@@ -155,6 +155,16 @@ body {
 
 }
 
+.input-group .confirm {
+  position: relative;
+  background-color: #efefef;
+  z-index: 2;
+  float: left;
+  width: 100%;
+  margin-bottom: 0;
+
+}
+
 .input-group .add1 {
   position: relative;
   background-color: #d9edf7;
@@ -181,3 +191,8 @@ body {
   left: -40px;
 }
 
+td a {
+  color: black;
+}td a:hover {
+  color: black;
+}

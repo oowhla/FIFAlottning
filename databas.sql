@@ -21,7 +21,8 @@ create table Teams (
 );
 
 
-insert into Players (name) values ('Ola'), ('Padde'), ('Frick'), ('Tim'), ('Dizza'), ('Hall'), ('Basse'), ('Mackan'), ('Frettan');
+insert into Players (name) values ('Ola'), ('Padde'), ('Frick'), ('Tim'), ('Dizza'), ('Hall'), ('Basse'), ('Mackan'), ('Frettan'), ('Simon'), ('Skogh'), ('Vakant');
+update Players set active=0 where name='Vakant';
 
 insert into Teams(player1, player2, round) values ('Hall', 'Mackan', 1), ('Frick', 'Dizza', 1), ('Ola', 'Basse', 1), ('Padde', 'Tim', 1);
 set FOREIGN_KEY_CHECKS = 1;
@@ -44,5 +45,8 @@ update Players set roundsplayed=2 where name = 'Mackan';
 update Players set roundsplayed=2 where name = 'Hall';
 update Players set roundsplayed=1 where name = 'Basse';
 update Players set roundsplayed=1 where name = 'Frettan';
+update Players set roundsplayed=1 where name = 'Simon';
+update Players set roundsplayed=1 where name = 'Skogh';
+
 
 select name, winmoneyfifa, winmoneypoker, winmoneyfifa+winmoneypoker as winmoneytotal, (winmoneyfifa+winmoneypoker-(100*roundsplayed)) as total, roundsplayed from players order by winmoneytotal desc;

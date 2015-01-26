@@ -55,15 +55,17 @@ if(isset($_POST["activate"])) {
 			<?php
 			$players = $db->query("select name from players where active = 0");
 			foreach($players->results() as $player) {
-				echo "
-					<form id='activatePlayer' method='post'>
-					<div class='input-group'>
-						<input name='activate' class='form-control' value='". $player->name . "' readonly>
-				 		<span class='input-group-btn'>
-							<button class='btn btn-default activate' type='submit'>Aktivera</button>
-						</span>
-					</div>
-				</form>";
+				if($player->name != "Vakant") {
+					echo "
+						<form id='activatePlayer' method='post'>
+						<div class='input-group'>
+							<input name='activate' class='form-control' value='". $player->name . "' readonly>
+					 		<span class='input-group-btn'>
+								<button class='btn btn-default activate' type='submit'>Aktivera</button>
+							</span>
+						</div>
+					</form>";
+				}
 			}
 
 			?>
@@ -72,13 +74,13 @@ if(isset($_POST["activate"])) {
 	<br><hr><br>
 
 	<?php 
-	if($players->count() == 0) {
+	if($players->count() == 1) {
 		?>
 		<div class='row'>
 		<div class='col-md-4 col-md-offset-1'>
 			<form id="addPlayer" method="post">
 					<div class='input-group'>
-						<input name='add' class='form-control' placeholder='Spelare att lägga till'>
+						<input name='playerName' class='form-control' placeholder='Spelare att lägga till'>
 				 		<span class='input-group-btn'>
 							<button class='btn btn-default add1' type='submit'>Lägg till</button>
 						</span>
@@ -94,7 +96,7 @@ if(isset($_POST["activate"])) {
 		<div class='col-md-4 col-md-offset-4'>
 			<form id="addPlayer" method="post">
 					<div class='input-group bothActive'>
-						<input name='add' class='form-control' placeholder='Spelare att lägga till'>
+						<input name='playerName' class='form-control' placeholder='Spelare att lägga till'>
 				 		<span class='input-group-btn'>
 							<button class='btn btn-default add' type='submit'>Lägg till</button>
 						</span>

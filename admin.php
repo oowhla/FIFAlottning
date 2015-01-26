@@ -36,12 +36,12 @@ if(Input::exists()) {
 			<form id="FIFA" method="post">
 				<table class="table table-striped table-bordered">
 					<tr>
-						<td class='data' colspan="3">
+						<td class='data' colspan="2">
 							<strong>FIFA</strong>
 						</td>
 					</tr>
 					<tr>
-						<td class='data'><strong>Deltog</strong></td>
+						<td class='data' style='display:none;'><strong>Deltog</strong></td>
 						<td class='data'><strong>Namn</strong></td>
 						<td class='data'><strong>Vinst</strong></td>
 					</tr>
@@ -50,7 +50,7 @@ if(Input::exists()) {
 					$pos = 1;
 					foreach($players->results() as $player) {
 						echo "<tr>
-						<td class='data'><input name='name[".$player->name."]' type='checkbox' value='"  . $player->name . "' checked></td>
+						<td class='data' style='display:none;'><input name='name[".$player->name."]' type='checkbox' value='"  . $player->name . "' checked></td>
 						<td class='data'><label>" . $player->name ."</label></td>
 						<td class='data'><input class='fifavinst' name='fifavinst[".$player->name."]' type='text' value='0'></td>
 					</tr>";
@@ -75,7 +75,7 @@ if(Input::exists()) {
 					</td>
 				</tr>
 				<tr>
-					<td class='data'><strong>Deltog</strong></td>
+					<td class='data' style='display:none;'><strong>Deltog</strong></td>
 					<td class='data'><strong>Namn</strong></td>
 					<td class='data'><strong>Vinst</strong></td>
 				</tr>
@@ -84,7 +84,7 @@ if(Input::exists()) {
 				$pos = 1;
 				foreach($players->results() as $player) {
 					echo "<tr>
-					<td class='data'><input name='name[".$player->name."]' type='checkbox' value='"  . $player->name . "' checked></td>
+					<td class='data' style='display:none;'><input name='name[".$player->name."]' type='checkbox' value='"  . $player->name . "' checked></td>
 					<td class='data'><label>" . $player->name ."</label></td>
 					<td class='data'><input class='pokervinst' name='pokervinst[".$player->name."]' type='text' value='0'></td>
 				</tr>";
